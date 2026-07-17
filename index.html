@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PetCare Hub | Registration</title>
+
+<style>
+
+:root{
+
+--bg:#fffaf2;
+--surface:#ffffff;
+--text:#2f2343;
+--muted:#7b6b8f;
+--accent:#ff5c8a;
+--accent2:#ffb347;
+--purple:#7c3aed;
+--border:#f5d9ff;
+
+}
+
+
+*{
+box-sizing:border-box;
+font-family:Inter,Segoe UI,Arial,sans-serif;
+}
+
+
+
+body{
+
+margin:0;
+min-height:100vh;
+
+background:
+linear-gradient(
+135deg,
+#fff7ef,
+#ffe4f0,
+#fdf0c8
+);
+
+color:var(--text);
+
+}
+
+
+
+/* Navbar */
+
+.navbar{
+
+height:75px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:0 50px;
+
+background:white;
+
+box-shadow:
+0 10px 30px rgba(255,92,138,.15);
+
+}
+
+
+.logo{
+
+font-size:25px;
+font-weight:800;
+
+}
+
+
+
+.navbar a{
+
+text-decoration:none;
+margin-left:20px;
+color:var(--text);
+font-weight:600;
+
+}
+
+
+.navbar a:hover{
+
+color:var(--accent);
+
+}
+
+
+
+/* Main */
+
+.container{
+
+min-height:calc(100vh - 75px);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:40px 20px;
+
+}
+
+
+
+.box{
+
+max-width:1100px;
+
+width:100%;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+}
+
+
+
+/* Left */
+
+.left{
+
+background:
+
+linear-gradient(
+135deg,
+#ff5c8a,
+#7c3aed,
+#ffb347
+);
+
+border-radius:35px;
+
+padding:45px;
+
+color:white;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+}
+
+
+
+.left h1{
+
+font-size:45px;
+
+margin:0 0 15px;
+
+}
+
+
+
+.left p{
+
+font-size:18px;
+
+line-height:1.6;
+
+}
+
+
+
+.points{
+
+margin-top:25px;
+
+}
+
+
+
+.points div{
+
+background:rgba(255,255,255,.2);
+
+padding:14px;
+
+border-radius:20px;
+
+margin:12px 0;
+
+}
+
+
+
+/* Form */
+
+.form-card{
+
+background:white;
+
+border-radius:35px;
+
+padding:35px;
+
+box-shadow:
+
+0 25px 60px rgba(124,58,237,.18);
+
+}
+
+
+
+.form-card h2{
+
+text-align:center;
+
+font-size:32px;
+
+margin-bottom:5px;
+
+}
+
+
+
+.subtitle{
+
+text-align:center;
+
+color:var(--muted);
+
+margin-bottom:25px;
+
+}
+
+
+
+.row{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+}
+
+
+
+.group{
+
+margin-bottom:15px;
+
+}
+
+
+
+.group label{
+
+font-weight:700;
+
+display:block;
+
+margin-bottom:7px;
+
+}
+
+
+
+input,
+select,
+textarea{
+
+width:100%;
+
+padding:13px 15px;
+
+border-radius:18px;
+
+border:1px solid var(--border);
+
+background:#fff4fa;
+
+font-size:15px;
+
+outline:none;
+
+}
+
+
+
+input:focus,
+select:focus,
+textarea:focus{
+
+border:2px solid var(--accent);
+
+}
+
+
+
+textarea{
+
+height:90px;
+
+resize:none;
+
+}
+
+
+
+.full{
+
+grid-column:1/-1;
+
+}
+
+
+
+.password{
+
+position:relative;
+
+}
+
+
+.eye{
+
+position:absolute;
+
+right:15px;
+
+bottom:12px;
+
+cursor:pointer;
+
+}
+
+
+
+button{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:30px;
+
+background:
+
+linear-gradient(
+135deg,
+var(--accent),
+var(--accent2)
+);
+
+color:white;
+
+font-size:18px;
+
+font-weight:700;
+
+cursor:pointer;
+
+margin-top:15px;
+
+transition:.3s;
+
+}
+
+
+
+button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 15px 30px rgba(255,92,138,.35);
+
+}
+
+
+
+.login{
+
+text-align:center;
+
+margin-top:20px;
+
+color:var(--muted);
+
+}
+
+
+.login a{
+
+color:var(--accent);
+
+font-weight:700;
+
+}
+
+
+
+@media(max-width:850px){
+
+.box{
+
+grid-template-columns:1fr;
+
+}
+
+
+.left{
+
+display:none;
+
+}
+
+
+
+.row{
+
+grid-template-columns:1fr;
+
+}
+
+
+.navbar{
+
+padding:0 20px;
+
+}
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+<div class="logo">
+🐾 PetCare Hub
+</div>
+
+
+<div>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="login.html">
+Login
+</a>
+
+</div>
+
+
+</nav>
+
+
+
+<div class="container">
+
+
+<div class="box">
+
+
+<div class="left">
+
+
+<h1>
+Welcome Pet Lover 🐶
+</h1>
+
+
+<p>
+Create your account and explore pet care,
+adoption services and a loving pet community.
+</p>
+
+
+
+<div class="points">
+
+<div>
+❤️ Easy Pet Adoption
+</div>
+
+
+<div>
+🩺 Veterinary Support
+</div>
+
+
+<div>
+🐾 Pet Care Tips
+</div>
+
+
+<div>
+🏡 Trusted Community
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="form-card">
+
+
+<h2>
+Create Account ✨
+</h2>
+
+
+<p class="subtitle">
+Join PetCare Hub today
+</p>
+
+
+
+<form>
+
+
+<div class="row">
+
+
+<div class="group">
+
+<label>
+Full Name
+</label>
+
+<input type="text" placeholder="Enter name">
+
+
+</div>
+
+
+
+<div class="group">
+
+<label>
+Username
+</label>
+
+<input type="text" placeholder="Username">
+
+
+</div>
+
+
+
+<div class="group">
+
+<label>
+Email
+</label>
+
+<input type="email" placeholder="Email address">
+
+
+</div>
+
+
+
+<div class="group">
+
+<label>
+Mobile
+</label>
+
+<input type="tel" placeholder="+91 XXXXX XXXXX">
+
+
+</div>
+
+
+
+<div class="group password">
+
+<label>
+Password
+</label>
+
+<input 
+type="password"
+id="password"
+placeholder="Password">
+
+
+<span class="eye" onclick="togglePassword()">
+👁
+</span>
+
+
+</div>
+
+
+
+<div class="group">
+
+<label>
+Pet Type
+</label>
+
+<select>
+
+<option>Select Pet</option>
+<option>Dog 🐶</option>
+<option>Cat 🐱</option>
+<option>Bird 🐦</option>
+<option>Rabbit 🐰</option>
+
+</select>
+
+</div>
+
+
+
+<div class="group full">
+
+<label>
+Address
+</label>
+
+<textarea placeholder="Enter address"></textarea>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<button>
+<a href="login.html" style="color: white; text-decoration: none;">Create Account 🚀</a>
+</button>
+
+
+
+</form>
+
+
+
+<div class="login">
+
+Already have account?
+<a href="login.html"></a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<script>
+
+
+function togglePassword(){
+
+let p=document.getElementById("password");
+
+
+if(p.type==="password")
+{
+
+p.type="text";
+
+}
+
+else{
+
+p.type="password";
+
+}
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

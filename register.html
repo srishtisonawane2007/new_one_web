@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Account Created</title>
+
+
+<style>
+
+*{
+    box-sizing:border-box;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+
+
+body{
+
+    min-height:100vh;
+
+    margin:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+    linear-gradient(
+    135deg,
+    #fff7ef,
+    #ffe4f0,
+    #fdf0c8
+    );
+
+}
+
+
+
+.success-card{
+
+    width:420px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:35px;
+
+    text-align:center;
+
+    box-shadow:
+    0 25px 60px rgba(124,58,237,.18);
+
+    animation:show .7s ease;
+
+}
+
+
+
+@keyframes show{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+.icon{
+
+font-size:80px;
+
+margin-bottom:15px;
+
+}
+
+
+
+h1{
+
+color:#22c55e;
+
+font-size:32px;
+
+margin-bottom:10px;
+
+}
+
+
+
+p{
+
+color:#777;
+
+font-size:17px;
+
+line-height:1.5;
+
+}
+
+
+
+.login-btn{
+
+display:inline-block;
+
+margin-top:25px;
+
+padding:14px 35px;
+
+border-radius:30px;
+
+background:
+
+linear-gradient(
+135deg,
+#ff5c8a,
+#ffb347
+);
+
+
+color:white;
+
+font-size:18px;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+
+
+.login-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 15px 30px rgba(255,92,138,.35);
+
+}
+
+
+
+.home-btn{
+
+display:block;
+
+margin-top:15px;
+
+color:#7c3aed;
+
+text-decoration:none;
+
+font-weight:700;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="success-card">
+
+
+<div class="icon">
+🎉
+</div>
+
+
+<h1>
+Account Successfully Created!
+</h1>
+
+
+<p>
+Your PetCare Hub account has been created successfully.
+You can now login and explore our pet services.
+</p>
+
+
+
+<a href="login.html" class="login-btn">
+
+Go To Login 🚀
+
+</a>
+
+
+
+
+
+
+</div>
+
+
+</body>
+
+</html>

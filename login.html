@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PetCare Hub | Login</title>
+
+
+<style>
+
+:root{
+
+--pink:#ff5c8a;
+--orange:#ffb347;
+--purple:#7c3aed;
+--text:#2f2343;
+--muted:#7b6b8f;
+--border:#f5d9ff;
+
+}
+
+
+*{
+
+box-sizing:border-box;
+font-family:Segoe UI,Arial,sans-serif;
+
+}
+
+
+
+body{
+
+margin:0;
+
+min-height:100vh;
+
+background:
+linear-gradient(
+135deg,
+#fff7ef,
+#ffe4f0,
+#fdf0c8
+);
+
+color:var(--text);
+
+}
+
+
+
+
+/* Navbar */
+
+.navbar{
+
+height:75px;
+
+background:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 50px;
+
+box-shadow:
+0 10px 30px rgba(255,92,138,.15);
+
+}
+
+
+.logo{
+
+font-size:26px;
+
+font-weight:800;
+
+}
+
+
+
+.navbar a{
+
+text-decoration:none;
+
+margin-left:20px;
+
+color:var(--text);
+
+font-weight:700;
+
+}
+
+
+
+.navbar a:hover{
+
+color:var(--pink);
+
+}
+
+
+
+
+
+/* Main */
+
+.login-container{
+
+min-height:calc(100vh - 75px);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:30px;
+
+
+}
+
+
+
+.login-wrapper{
+
+width:100%;
+
+max-width:1100px;
+
+display:grid;
+
+grid-template-columns:1fr 420px;
+
+gap:30px;
+
+
+}
+
+
+
+
+
+/* Left Banner */
+
+
+.banner{
+
+background:
+
+linear-gradient(
+135deg,
+var(--pink),
+var(--purple),
+var(--orange)
+);
+
+border-radius:35px;
+
+padding:45px;
+
+color:white;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+.banner:after{
+
+content:"🐾";
+
+font-size:220px;
+
+position:absolute;
+
+right:-40px;
+
+bottom:-40px;
+
+opacity:.18;
+
+}
+
+
+
+.banner h1{
+
+font-size:45px;
+
+margin:0 0 15px;
+
+}
+
+
+
+.banner p{
+
+font-size:18px;
+
+line-height:1.7;
+
+}
+
+
+
+.cards{
+
+margin-top:30px;
+
+}
+
+
+
+.small-card{
+
+background:rgba(255,255,255,.2);
+
+padding:14px;
+
+border-radius:20px;
+
+margin:12px 0;
+
+}
+
+
+
+
+
+/* Login Box */
+
+
+.login-box{
+
+background:white;
+
+border-radius:35px;
+
+padding:35px;
+
+box-shadow:
+
+0 25px 60px rgba(124,58,237,.2);
+
+animation:up .7s ease;
+
+}
+
+
+
+@keyframes up{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+.login-box h2{
+
+text-align:center;
+
+font-size:32px;
+
+}
+
+
+
+.subtitle{
+
+text-align:center;
+
+color:var(--muted);
+
+}
+
+
+
+
+.input-group{
+
+margin-top:18px;
+
+}
+
+
+
+.input-group label{
+
+font-weight:700;
+
+display:block;
+
+margin-bottom:8px;
+
+}
+
+
+
+.input-group input{
+
+width:100%;
+
+padding:14px;
+
+border-radius:18px;
+
+border:1px solid var(--border);
+
+background:#fff5fa;
+
+outline:none;
+
+font-size:15px;
+
+}
+
+
+
+.input-group input:focus{
+
+border:2px solid var(--pink);
+
+}
+
+
+
+
+
+.password-box{
+
+position:relative;
+
+}
+
+
+
+.eye{
+
+position:absolute;
+
+right:15px;
+
+bottom:13px;
+
+cursor:pointer;
+
+}
+
+
+
+
+
+#strength{
+
+font-size:13px;
+
+font-weight:700;
+
+}
+
+
+
+
+
+.options{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-top:15px;
+
+font-size:14px;
+
+}
+
+
+
+.options a{
+
+color:var(--pink);
+
+font-weight:bold;
+
+text-decoration:none;
+
+}
+
+
+
+
+.login-btn{
+
+width:100%;
+
+margin-top:25px;
+
+padding:15px;
+
+border:none;
+
+border-radius:30px;
+
+background:
+
+linear-gradient(
+135deg,
+var(--pink),
+var(--orange)
+);
+
+color:white;
+
+font-size:18px;
+
+font-weight:800;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+
+.login-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+
+0 15px 30px rgba(255,92,138,.4);
+
+}
+
+
+
+.register{
+
+text-align:center;
+
+margin-top:25px;
+
+color:var(--muted);
+
+}
+
+
+
+.register a{
+
+color:var(--pink);
+
+font-weight:800;
+
+text-decoration:none;
+
+}
+
+
+
+
+
+@media(max-width:850px){
+
+
+.login-wrapper{
+
+grid-template-columns:1fr;
+
+}
+
+
+.banner{
+
+display:none;
+
+}
+
+
+
+.navbar{
+
+padding:0 20px;
+
+}
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+
+<nav class="navbar">
+
+
+<div class="logo">
+
+🐾 PetCare Hub
+
+</div>
+
+
+<div>
+
+<a href="index.html">
+Home
+</a>
+
+
+<a href="register.html">
+Register
+</a>
+
+</div>
+
+
+</nav>
+
+
+
+
+
+
+
+<section class="login-container">
+
+
+<div class="login-wrapper">
+
+
+
+<div class="banner">
+
+
+<h1>
+Welcome Back 🐶
+</h1>
+
+
+<p>
+Login to manage your pets, explore adoption,
+and connect with our pet community.
+</p>
+
+
+
+<div class="cards">
+
+<div class="small-card">
+❤️ Trusted Pet Community
+</div>
+
+
+<div class="small-card">
+🩺 Veterinary Support
+</div>
+
+
+<div class="small-card">
+🏡 Safe Adoption
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="login-box">
+
+
+<h2>
+Login ✨
+</h2>
+
+
+<p class="subtitle">
+Access your PetCare account
+</p>
+
+
+
+
+<form id="loginForm">
+
+
+<div class="input-group">
+
+<label>
+Email / Username
+</label>
+
+
+<input 
+type="text"
+id="username"
+placeholder="Enter username"
+required>
+
+
+</div>
+
+
+
+
+<div class="input-group password-box">
+
+
+<label>
+Password
+</label>
+
+
+<input 
+type="password"
+id="password"
+placeholder="Enter password"
+required>
+
+
+<span class="eye" onclick="togglePassword()">
+
+👁
+
+</span>
+
+
+<p id="strength"></p>
+
+
+</div>
+
+
+
+
+<div class="options">
+
+
+<label>
+
+<input type="checkbox" id="remember">
+
+Remember me
+
+</label>
+
+
+
+<a href="#">
+Forgot Password?
+</a>
+
+
+</div>
+
+
+
+
+<button class="login-btn" id="loginBtn">
+<a href="home.html" style="color: white; text-decoration: none;">Login 🚀</a>
+
+
+</button>
+
+
+
+
+</form>
+
+
+
+
+
+<div class="register">
+
+Don't have account?
+
+<a href="index.html">
+
+Create Account
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<script>
+
+
+
+// Show Hide Password
+
+
+function togglePassword(){
+
+
+let pass=document.getElementById("password");
+
+
+let eye=document.querySelector(".eye");
+
+
+if(pass.type==="password"){
+
+pass.type="text";
+
+eye.innerHTML="🙈";
+
+
+}
+
+else{
+
+
+pass.type="password";
+
+eye.innerHTML="👁";
+
+
+}
+
+
+}
+
+
+
+
+
+
+// Password Strength
+
+
+let pass=document.getElementById("password");
+
+
+pass.addEventListener("input",function(){
+
+
+let text=document.getElementById("strength");
+
+
+let value=this.value;
+
+
+
+if(value.length===0){
+
+text.innerHTML="";
+
+}
+
+else if(value.length<6){
+
+text.innerHTML="Weak Password 🔴";
+
+text.style.color="red";
+
+}
+
+else if(value.length<10){
+
+text.innerHTML="Medium Password 🟡";
+
+text.style.color="orange";
+
+}
+
+else{
+
+text.innerHTML="Strong Password 🟢";
+
+text.style.color="green";
+
+}
+
+
+});
+
+
+
+
+
+
+
+// Login
+
+
+document.getElementById("loginForm")
+.addEventListener("submit",function(e){
+
+
+e.preventDefault();
+
+
+
+let user=
+document.getElementById("username").value;
+
+
+let password=
+document.getElementById("password").value;
+
+
+
+if(user==="" || password===""){
+
+
+toast("⚠️ Fill all details");
+
+return;
+
+
+}
+
+
+
+let btn=document.getElementById("loginBtn");
+
+
+btn.innerHTML="Checking... ⏳";
+
+
+
+setTimeout(()=>{
+
+
+if(
+password.length>=6
+){
+
+
+toast("🎉 Login Successful");
+
+
+if(
+document.getElementById("remember").checked
+){
+
+localStorage.setItem(
+"username",
+user
+);
+
+}
+
+
+
+setTimeout(()=>{
+
+window.location.href="index.html";
+
+},1500);
+
+
+
+}
+
+
+else{
+
+
+toast("❌ Invalid Password");
+
+
+btn.innerHTML="Login 🚀";
+
+
+}
+
+
+
+},1200);
+
+
+
+});
+
+
+
+
+
+
+// Toast
+
+
+function toast(message){
+
+
+let div=document.createElement("div");
+
+
+div.innerHTML=message;
+
+
+div.style.position="fixed";
+
+div.style.bottom="30px";
+
+div.style.right="30px";
+
+div.style.padding="15px 25px";
+
+div.style.background=
+"linear-gradient(135deg,#ff5c8a,#7c3aed)";
+
+
+div.style.color="white";
+
+div.style.borderRadius="30px";
+
+div.style.fontWeight="700";
+
+div.style.zIndex="999";
+
+
+document.body.appendChild(div);
+
+
+
+setTimeout(()=>{
+
+div.remove();
+
+},2500);
+
+
+
+}
+
+
+
+
+
+
+
+// Remember Username
+
+
+window.onload=function(){
+
+
+let saved=
+localStorage.getItem("username");
+
+
+if(saved){
+
+document.getElementById("username").value=saved;
+
+}
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
